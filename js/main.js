@@ -25,12 +25,18 @@ var list=[dayTheUserWasBorn,name];
 
 return list;
 }
-function button{
+
+function main(){
 var UserInputYear=parseInt(prompt("Enter Year Of Birth:"));
-var UserInputMonth=pparseInt(prompt("Enter Month Of Birth:"));
+var UserInputMonth=parseInt(prompt("Enter Month Of Birth:"));
 var UserInputDay=parseInt(prompt("Enter Day Of Birth:"));
 var UserInputGender=prompt("Enter Gender:");
 var UserInputCentury=parseInt(UserInputYear.toString().substring(0,2));
 
-calculateNameAndDay(UserInputCentury,UserInputYear,UserInputMonth,UserInputDay,UserInputGender);
+var output=calculateNameAndDay(UserInputCentury,UserInputYear,UserInputMonth,UserInputDay,UserInputGender);
+alert(output);
+var outputElement=document.getElementById("output");
+outputElement.innerHTML = "You were born on:"+ output[0] +". Your Akan name is: "+ output[1];
+outputElement.classList.add("akanName");
+
 }
